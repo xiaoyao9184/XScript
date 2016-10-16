@@ -1,0 +1,38 @@
+@echo off
+Setlocal enabledelayedexpansion
+::CODER BY Administrator POWERD BY iBAT 1.6
+
+title="test"
+
+echo 1、获取批处理自身的完整路径
+echo %0
+
+echo 2、获取批处理自身的完整路径，并去掉首尾的引号
+echo %~0
+
+echo 3、获取批处理自身的文件名及后缀名
+echo %~nx0
+
+echo 4、获取批处理自身的文件名
+echo %~n0
+
+echo 5、获取批处理自身的后缀名
+echo %~x0
+
+echo 6、获取批处理自身的完整路径，不含文件名
+echo %~dp0  
+echo %cd%
+
+echo 7、获取批处理自身的盘符
+echo %~d0
+
+echo 8、获取批处理自身的大小
+echo %~z0
+
+echo 9、获取批处理自身的修改时间
+echo %~t0
+
+
+
+
+pause
