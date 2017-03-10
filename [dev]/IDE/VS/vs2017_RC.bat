@@ -16,13 +16,13 @@ set eaco_file_down=
 ::Professional
 ::Enterprise
 set version=
-set downloadPath=%~dp0downloads\vs2017rc
 set lang=
 
 
 :v_create
 
 set downSrc=https://aka.ms/vs/15/release/vs_%version%.exe
+set downloadPath=%~dp0downloads\vs2017rc_%version%
 set exeFile=%~dp0vs_%version%.exe
 
 rem exeFile = %exeFile%
