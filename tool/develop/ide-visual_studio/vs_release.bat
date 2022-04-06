@@ -66,9 +66,9 @@ IF "%download_layout%"=="" (
 :download_file
 
 IF NOT EXIST "%download_file%" (
-	MKDIR "%download_path%"
-	ECHO download from !download_url!
-	BITSADMIN /transfer "download" /download /priority normal !download_url! "!download_file!"
+    MKDIR "%download_path%"
+    ECHO download from !download_url!
+    BITSADMIN /transfer "download" /download /priority normal !download_url! "!download_file!"
 )
 
 

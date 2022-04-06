@@ -25,8 +25,8 @@ ECHO:
 WHOAMI /GROUPS | FIND "12288" >nul
 IF ERRORLEVEL 1 (
     ECHO Auto requires elevated privileges...
-	SET script_file=%~f0
-	( mshta "vbscript:CreateObject("shell.Application").ShellExecute("%~f0","","","runas",1)(window.close)" ) & GOTO:EOF
+    SET script_file=%~f0
+    ( mshta "vbscript:CreateObject("shell.Application").ShellExecute("%~f0","","","runas",1)(window.close)" ) & GOTO:EOF
 )
 ECHO Now runas root.
 

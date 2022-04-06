@@ -16,12 +16,12 @@ IF "%1"=="" (
 
 ECHO list files for %work_path% 
 FOR /f %%L IN ('DIR /b %work_path%\*.*') DO (
-	ECHO %%L
+    ECHO %%L
 
-	FOR %%F IN ("!work_path!\%%L") DO SET attributes=%%~aF
-	IF "!attributes:l=!" NEQ "!attributes!" (
-		ECHO \__ is link
-	)
+    FOR %%F IN ("!work_path!\%%L") DO SET attributes=%%~aF
+    IF "!attributes:l=!" NEQ "!attributes!" (
+        ECHO \__ is link
+    )
 )
 
 

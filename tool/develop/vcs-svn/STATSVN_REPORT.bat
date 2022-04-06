@@ -14,19 +14,19 @@ cd %~dp0
 set statsvnPath=%cd%
 set d=%date:~0,10%
 set t=%time:~0,8%
-set tip=VCSÍ³¼Æ³ÌÐò£ºSTATSVNÍ³¼ÆÉú³É
+set tip=VCSÍ³ï¿½Æ³ï¿½ï¿½ï¿½STATSVNÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 set ver=1.1
 set statsvnPath=%cd%
 set projectName=
 set projectPath=
 set reportPath=
 
-set tipEcho_statsvnPath=ÐèÒªÊäÈëstatsvnÂ·¾¶
-set tipSet_statsvnPath=ÇëÊäÈëstatsvnÂ·¾¶£¬È»ºó»Ø³µ£º
-set tipEcho_projectPath=ÐèÒªÊäÈëSVNÄ¿Â¼
-set tipSet_projectPath=ÇëÊäÈëSVNÄ¿Â¼£¬È»ºó»Ø³µ£º
-set tipEcho_projectName=ÐèÒªÊäÈëSVNÏîÄ¿Ãû³Æ
-set tipSet_projectName=ÇëÊäÈëSVNÏîÄ¿Ãû³Æ£¬È»ºó»Ø³µ£º
+set tipEcho_statsvnPath=ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½statsvnÂ·ï¿½ï¿½
+set tipSet_statsvnPath=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½statsvnÂ·ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
+set tipEcho_projectPath=ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½SVNÄ¿Â¼
+set tipSet_projectPath=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SVNÄ¿Â¼ï¿½ï¿½È»ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
+set tipEcho_projectName=ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½SVNï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
+set tipSet_projectName=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SVNï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ£ï¿½È»ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
 
 
 
@@ -35,7 +35,7 @@ set tipSet_projectName=ÇëÊäÈëSVNÏîÄ¿Ãû³Æ£¬È»ºó»Ø³µ£º
 title %tip% %ver%
 
 echo %tip%
-echo ÇëÎð¹Ø±Õ£¡£¡£¡
+echo ï¿½ï¿½ï¿½ï¿½Ø±Õ£ï¿½ï¿½ï¿½ï¿½ï¿½
 echo ...
 
 
@@ -43,28 +43,28 @@ echo ...
 
 :check
 if not exist %statsvnPath%\statsvn.jar (
-	echo %tipEcho_statsvnPath%
-	set /p statsvnPath=%tipSet_statsvnPath%
-	echo .
+    echo %tipEcho_statsvnPath%
+    set /p statsvnPath=%tipSet_statsvnPath%
+    echo .
 )
 
 if "%reportPath%"=="" (
-	for %%a in (!statsvnPath!) do (
-		set reportPath=%%a
-	)
+    for %%a in (!statsvnPath!) do (
+        set reportPath=%%a
+    )
 )
 
 if "%projectPath%"=="" (
-	echo %tipEcho_projectPath%
-	set /p projectPath=%tipSet_projectPath%
+    echo %tipEcho_projectPath%
+    set /p projectPath=%tipSet_projectPath%
         set makeSure=true
-	echo .
+    echo .
 )
 
 if "%projectName%"=="" (
-	for %%p in (!projectPath!) do (
-		set projectName=%%~np
-	)
+    for %%p in (!projectPath!) do (
+        set projectName=%%~np
+    )
 )
 
 
@@ -79,13 +79,13 @@ set svnLogFile=%reportPath%.log
 
 :tip
 
-echo statsvnÄ¿Â¼£º%statsvnPath%
-echo ÏîÄ¿Ä¿Â¼Îª£º%projectPath%
-echo ÏîÄ¿Ãû³Æ£º%projectName%
-echo ÏîÄ¿Ç©ÈëÈÕÖ¾£º%svnLogFile%
-echo ÏîÄ¿Í³¼ÆÊä³öÄ¿Â¼£º%reportPath%
+echo statsvnÄ¿Â¼ï¿½ï¿½%statsvnPath%
+echo ï¿½ï¿½Ä¿Ä¿Â¼Îªï¿½ï¿½%projectPath%
+echo ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ£ï¿½%projectName%
+echo ï¿½ï¿½Ä¿Ç©ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½%svnLogFile%
+echo ï¿½ï¿½Ä¿Í³ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½%reportPath%
 if "%makeSure%"=="true" pause
-echo ÔËÐÐÖÐ...      Ctrl+C½áÊø³ÌÐò
+echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...      Ctrl+Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -93,7 +93,7 @@ echo ÔËÐÐÖÐ...      Ctrl+C½áÊø³ÌÐò
 
 :log
 cd %projectPath%
-echo Éú³ÉSVNÈÕÖ¾%svnLogFile%
+echo ï¿½ï¿½ï¿½ï¿½SVNï¿½ï¿½Ö¾%svnLogFile%
 svn log -v --xml > "%svnLogFile%"
 
 
@@ -102,13 +102,13 @@ svn log -v --xml > "%svnLogFile%"
 :begin
 cd %statsvnPath%
 mkdir "%reportPath%"
-echo Éú³ÉSTATSVN×Ü½á
+echo ï¿½ï¿½ï¿½ï¿½STATSVNï¿½Ü½ï¿½
 java -jar %statsvnPath%/statsvn.jar "%svnLogFile%" "%projectPath%"  -charset utf-8 -disable-twitter-button -title %projectName% -output-dir "%reportPath%"
 
 
 
 
 :exit
-echo ÒÑ¾­Ö´ÐÐÍê±Ï£¬¿ÉÒÔ½áÊø´Ë³ÌÐò
+echo ï¿½Ñ¾ï¿½Ö´ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½
 
 pause

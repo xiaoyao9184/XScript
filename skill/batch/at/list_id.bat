@@ -7,13 +7,13 @@ ECHO https://en.wikipedia.org/wiki/At_(command)#:~:text=It%20is%20available%20si
 AT
 
 FOR /f "skip=2 tokens=1,4*" %%a IN ('AT') DO (
-	::get command_line from b,c
-	IF "%%c"=="" (
-		SET command_line=%%b
-	) ELSE SET command_line=%%b %%c
+    ::get command_line from b,c
+    IF "%%c"=="" (
+        SET command_line=%%b
+    ) ELSE SET command_line=%%b %%c
 
-	ECHO ID=%%a CommandLine=!command_line!
-	
+    ECHO ID=%%a CommandLine=!command_line!
+    
 )
 
 PAUSE

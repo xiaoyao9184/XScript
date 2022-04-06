@@ -10,25 +10,25 @@ Setlocal enabledelayedexpansion
 
 :v
 
-::1±äÁ¿¸³Öµ
+::1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 %~d0
 cd %~dp0
 set d=%date:~0,10%
 set t=%time:~0,8%
-set tip=VCSÍ³¼Æ³ÌÐò£ºgitinspectorÍ³¼ÆHTMLÉú³É
+set tip=VCSÍ³ï¿½Æ³ï¿½ï¿½ï¿½gitinspectorÍ³ï¿½ï¿½HTMLï¿½ï¿½ï¿½ï¿½
 set ver=1.0
 set gitinspectorPath=%cd%\gitinspector
 set projectName=
 set projectPath=
 set reportPath=
 
-set tipChoice_gitinspector=gitinspectorÎ´ÕÒµ½£¬Í¨¹ýÍøÂç¿ËÂ¡Âð[YÊÇ£»N·ñ£¬ÊÖ¶¯Ö¸¶¨Â·¾¶]£¿
-set tipEcho_gitinspectorPath=ÐèÒªÊäÈëgitinspectorÂ·¾¶
-set tipSet_gitinspectorPath=ÇëÊäÈëgitinspectorÂ·¾¶£¬È»ºó»Ø³µ£º
-set tipEcho_projectPath=ÐèÒªÊäÈëGit±¾µØ×ÊÔ´¿âÂ·¾¶
-set tipSet_projectPath=ÇëÊäÈëGit±¾µØ×ÊÔ´¿âÂ·¾¶£¬È»ºó»Ø³µ£º
-set tipEcho_projectName=ÐèÒªÊäÈëGitÏîÄ¿Ãû³Æ
-set tipSet_projectName=ÇëÊäÈëGitÏîÄ¿Ãû³Æ£¬È»ºó»Ø³µ£º
+set tipChoice_gitinspector=gitinspectorÎ´ï¿½Òµï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¡ï¿½ï¿½[Yï¿½Ç£ï¿½Nï¿½ï¿½ï¿½Ö¶ï¿½Ö¸ï¿½ï¿½Â·ï¿½ï¿½]ï¿½ï¿½
+set tipEcho_gitinspectorPath=ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½gitinspectorÂ·ï¿½ï¿½
+set tipSet_gitinspectorPath=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gitinspectorÂ·ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
+set tipEcho_projectPath=ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Gitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Â·ï¿½ï¿½
+set tipSet_projectPath=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
+set tipEcho_projectName=ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Gitï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
+set tipSet_projectName=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gitï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ£ï¿½È»ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
 
 
 
@@ -37,7 +37,7 @@ set tipSet_projectName=ÇëÊäÈëGitÏîÄ¿Ãû³Æ£¬È»ºó»Ø³µ£º
 title %tip% %ver%
 
 echo %tip%
-echo ÇëÎð¹Ø±Õ£¡£¡£¡
+echo ï¿½ï¿½ï¿½ï¿½Ø±Õ£ï¿½ï¿½ï¿½ï¿½ï¿½
 echo ...
 
 
@@ -45,9 +45,9 @@ echo ...
 
 :check
 
-::3±äÁ¿¼ìÑé ²ÎÊý´¦Àí
+::3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 if not exist %gitinspectorPath% (
-	goto :choice
+    goto :choice
 )
 goto :choiceEnd
 
@@ -71,34 +71,34 @@ goto :choiceEnd
 :choiceEnd
 
 if "%reportPath%"=="" (
-	for %%p in (!gitinspectorPath!) do (
-		set reportPath=%%~dpp
-	)
+    for %%p in (!gitinspectorPath!) do (
+        set reportPath=%%~dpp
+    )
 )
 
 if "%projectPath%"=="" (
-	echo %tipEcho_projectPath%
-	set /p projectPath=%tipSet_projectPath%
+    echo %tipEcho_projectPath%
+    set /p projectPath=%tipSet_projectPath%
         set makeSure=true
 )
 
 if "%projectName%"=="" (
-	for %%p in (!projectPath!) do (
-		set projectName=%%~np
-	)
+    for %%p in (!projectPath!) do (
+        set projectName=%%~np
+    )
 )
 
 
 
 
 :tip
-echo gitinspectorÄ¿Â¼£º%gitinspectorPath%
-echo ÏîÄ¿Ä¿Â¼Îª£º%projectPath%
-echo ÏîÄ¿Ãû³Æ£º%projectName%
-echo ÏîÄ¿Í³¼ÆÊä³öÄ¿Â¼£º%reportPath%
-echo ÏîÄ¿Í³¼ÆÊä³öÎÄ¼þ£º%projectName%_%d:/=-%_%t::=-%.html
+echo gitinspectorÄ¿Â¼ï¿½ï¿½%gitinspectorPath%
+echo ï¿½ï¿½Ä¿Ä¿Â¼Îªï¿½ï¿½%projectPath%
+echo ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ£ï¿½%projectName%
+echo ï¿½ï¿½Ä¿Í³ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½%reportPath%
+echo ï¿½ï¿½Ä¿Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½%projectName%_%d:/=-%_%t::=-%.html
 if "%makeSure%"=="true" pause
-echo ÔËÐÐÖÐ...      Ctrl+C½áÊø³ÌÐò
+echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...      Ctrl+Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -111,6 +111,6 @@ python %gitinspectorPath%\gitinspector.py --format=html --timeline --localize-ou
 
 
 :exit
-echo ÒÑ¾­Ö´ÐÐÍê±Ï£¬¿ÉÒÔ½áÊø´Ë³ÌÐò
+echo ï¿½Ñ¾ï¿½Ö´ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½
 
 pause
