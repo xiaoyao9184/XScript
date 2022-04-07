@@ -3,14 +3,16 @@
 #FILE Get-LocalDB
 #DESC Get LocalDB
 
-[regex]$dbName = "^Name:.*|^名称:.*"
-[regex]$dbVersion = "^Version:.*|^版本:.*"
-[regex]$dbSharedName = "^Shared name:.*|^共享名称:.*"
-[regex]$dbOwner = "^Owner:.*|^所有者:.*"
-[regex]$dbAutoCreate = "^Auto-create:.*|^自动创建:.*"
-[regex]$dbState = "^State:.*|^状态:.*"
-[regex]$dbLastStartTime= "^Last start time:.*|^上次启动时间:.*"
-[regex]$dbInstancePipeName = "^Instance pipe name:.*|^实例管道名称:.*"
+
+$regex = ConvertFrom-StringData (Get-Content ./Get-LocalDB-RegexMatcher.properties -raw)
+[regex]$dbName = $regex.'name'
+[regex]$dbVersion = $regex.'version'
+[regex]$dbSharedName = $regex.'shared-name'
+[regex]$dbOwner = $regex.'owner'
+[regex]$dbAutoCreate = $regex.'auto-create'
+[regex]$dbState = $regex.'state'
+[regex]$dbLastStartTime= $regex.'last-start-time'
+[regex]$dbInstancePipeName = $regex.'instance-pipeName'
 
 
 Function DEBUG-Write-Array($msg,$array) {
