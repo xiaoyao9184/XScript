@@ -27,7 +27,7 @@ $CallStack = Get-PSCallStack | Where-Object  {$_.Command -ne "<ScriptBlock>"}
 if($CallStack.Count -eq 1){
     $pipe = Get-LocalDB-PipeName
     $pipe | clip.exe
-    Write-Host Has been copied $pipe to the clipboard, any key to exit
+    Write-Host "Has been copied $pipe to the clipboard, any key to exit"
     Read-Host | Out-Null
     Exit
 }

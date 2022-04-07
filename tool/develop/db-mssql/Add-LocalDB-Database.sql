@@ -1,0 +1,2 @@
+﻿CREATE DATABASE $db_name
+GO
